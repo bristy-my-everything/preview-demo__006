@@ -1,0 +1,636 @@
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| 01. Product Details
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+/*==================================================
+===| 00. Product Details
+===================================================*/
+.product-details {
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link {
+    background-color: #fff;
+
+    img {
+      opacity: .8;
+      background: #ccc;
+    }
+  }
+
+  .nav-link {
+    background: #fff;
+    padding: 0px;
+    margin: 5px 0px;
+    box-shadow: $itembox-shadow;
+  }
+
+  .product-zoom-imgbox {
+    .tab-content {
+      background: #fff;
+      box-shadow: $itembox-shadow;
+      min-height: 400px;
+
+      @include phone1 {
+        min-height: 300px;
+      }
+
+      @include phone2 {
+        min-height: 250px;
+      }
+
+      @include phone3 {
+        min-height: 200px;
+      }
+    }
+
+    .nav-pills .nav-link {
+      @include tab1 {
+        width: 25%;
+        margin-right: 20px;
+        margin-bottom: 30px;
+      }
+
+      @include phone2 {
+        width: 28%;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__content {
+    @include laptop1 {
+      margin-top: 50px;
+    }
+
+    .product-titel-bar {
+      margin-bottom: 15px;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        color: $color-primary;
+        font-weight: bold;
+        font-size: 14px;
+        padding-right: 20px;
+      }
+    }
+
+    h3 {
+      color: $color-primary;
+    }
+
+    .product-meta {
+      margin: 10px 0px;
+
+      .product-rating a {
+        color: $color-primary;
+
+        @include phone3 {
+          font-size: 13px;
+        }
+      }
+
+      .product-review-top {
+        text-transform: capitalize;
+        color: #999;
+
+        @include phone3 {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .product-qty {
+      .qty-content {
+        position: relative;
+        padding-left: 50px;
+
+        @include phone3 {
+          padding-left: 35px;
+        }
+
+        &::before {
+          position: absolute;
+          content: "Qty";
+          top: 5px;
+          left: 0px;
+          color: #999;
+        }
+      }
+
+      a.btn {
+        background: $color-primary;
+        color: #fff;
+
+        &:hover {
+          background: $color-secondary;
+          color: #111;
+        }
+      }
+    }
+
+    .product-share {
+      border-top: 1px solid #ccc;
+      margin-top: 30px;
+      padding-top: 20px;
+
+      p {
+        color: #999;
+        padding-top: 4px;
+        margin: 0;
+      }
+
+      a {
+        color: #999;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        line-height: 30px;
+        padding: 0px 10px;
+        border-radius: 5px;
+        transition: all .3s;
+
+        @include phone2 {
+          padding-left: 15px;
+        }
+
+        &:hover {
+          color: $color-secondary;
+          border-color: $color-secondary;
+        }
+
+        i {
+          padding-right: 5px;
+        }
+
+        span {
+          @include phone2 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Product Description
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+
+.product-description-container {
+
+  .product-description {
+    padding: 80px 0px 0px;
+
+    @include tab1 {
+      padding: 60px 0px 0px;
+    }
+
+    .nav-tabs {
+      border-bottom: 1px solid #dee2e6;
+      background: #fff;
+    }
+  }
+
+  .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin: 0px 30px 0px 0px;
+    box-shadow: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-bottom: none;
+    font-size: 14px;
+
+    @include phone2 {
+      margin-right: 10px;
+    }
+
+    @include phone3 {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &:not(.active) {
+      border-color: #dee2e6;
+      color: #555;
+    }
+  }
+
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
+    color: #fff;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  .description-area {
+    background: #fff;
+    padding: 30px;
+    box-shadow: $itembox-shadow;
+
+    @include phone2 {
+      padding: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    p {
+      @include tab1 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .review-area {
+    background: #fff;
+    padding: 30px;
+    box-shadow: $itembox-shadow;
+    position: relative;
+
+    @include phone2 {
+      padding: 10px;
+    }
+
+    img {
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      width: 100px;
+
+      @include tab1 {
+        width: 70px;
+      }
+    }
+
+    .review-area-box {
+      padding-left: 120px;
+
+      @include tab1 {
+        padding-left: 90px;
+      }
+
+      @include phone2 {
+        padding-left: 0px;
+        padding-top: 100px;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+
+        @include tab1 {
+          font-size: 16px;
+        }
+
+        span {
+          color: $color-primary;
+          font-style: italic;
+          font-size: 80%;
+        }
+      }
+
+      .product-rating a {
+        color: $color-primary;
+
+        @include tab1 {
+          font-size: 14px;
+        }
+      }
+
+      .review-text {
+        p {
+          @include tab1 {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Product Description
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+
+.review-box {
+  margin-top: 80px;
+
+  @include tab1 {
+    margin-top: 60px;
+  }
+
+  &__body {
+    background: #fff;
+    padding: 30px;
+    box-shadow: $itembox-shadow;
+
+    @include phone2 {
+      padding: 10px;
+    }
+  }
+
+  .content-box-md {
+    padding-top: 0px;
+  }
+
+  &__content {
+
+    h2 {
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #999;
+
+      @include phone2 {
+        font-size: 14px;
+      }
+    }
+
+    .review-box-titel {
+      margin-bottom: 40px;
+
+      @include phone3 {
+        margin-bottom: 25px;
+      }
+
+      h3 {
+        font-weight: bold;
+        text-transform: capitalize;
+        float: left;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 2px;
+
+        @include phone3 {
+          float: none;
+        }
+      }
+
+      .review-box-icon a {
+        color: $color-primary;
+
+        @include phone2 {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .review-form {
+    label {
+      display: block;
+      text-transform: uppercase;
+      color: #222;
+      font-weight: 700;
+      font-size: 15px;
+      font-family: $font-display;
+    }
+  }
+}
+
+
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| 01. Product Description HTML
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+/*
+
+  <!-- |==========================================| -->
+  <!-- |=====|| Product Details start ||===============| -->
+  <section class="product-details">
+    <div class="content__box">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-xl-7">
+            <div class="product-zoom-imgbox">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                      aria-controls="v-pills-home" aria-selected="true">
+                      <img src="assets/img/products/product-01.png" alt="">
+                    </a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                      aria-controls="v-pills-profile" aria-selected="false">
+                      <img src="assets/img/products/product-01.1.png" alt="">
+                    </a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                      aria-controls="v-pills-messages" aria-selected="false">
+                      <img src="assets/img/products/product-01.png" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="tab-content d-flex align-items-center justify-content-center" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                      <img src="assets/img/products/product-01.png" alt="">
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                      <img src="assets/img/products/product-01.1.png" alt="">
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                      <img src="assets/img/products/product-01.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-5">
+            <div class="product-details__content">
+              <div class="product-titel-bar d-flex align-items-center justify-content-between">
+                <h2>Spanner</h2>
+                <p><i class="far fa-check-square"></i> In-stock</p>
+              </div>
+              <h3>$17.00</h3>
+              <div class="product-meta d-flex justify-content-between">
+                <div class="product-rating">
+                  <a href="#"><i class="fas fa-star"></i></a>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                  <a href="#"><i class="fas fa-star"></i></a>
+                  <a href="#"><i class="far fa-star"></i></a>
+                </div>
+                <div class="product-review-top">
+                  <p>2 customer review</p>
+                </div>
+              </div>
+              <p>Illo maxime omnis consequatur tenetur sed cum id numquam consequuntur excepturi. Totam at eaque
+                accusantium, similique atque esse aliquid debitis dolores repellendus impedit eos ullam ea libero
+                quisquam eius labore.</p>
+              <div class="product-qty d-flex justify-content-between">
+                <span class="qty-content">
+                  <select>
+                    <option data-display="01">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                  </select>
+                </span>
+                <a href="#" class="main__btn">Add to cart</a>
+              </div>
+              <div class="product-share d-flex align-items-center justify-content-between">
+                <p>Share Now</p>
+                <a href="#"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+                <a href="#"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i> <span>Google+</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="product-description-container">
+              <div class="product-description">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                      aria-controls="nav-home" aria-selected="true">Description</a>
+                    <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                      aria-controls="nav-profile" aria-selected="false">Review (2)</a>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="description-area">
+                      <h2>description</h2>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+                        dolorum eligendi cumque ipsa?
+                        Repellat nesciunt cupiditate nam omnis magni molestiae? Cum eum, repellendus aut quam doloribus
+                        cumque animi adipisci eligendi aspernatur facilis optio enim at.</p>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur rerum expedita beatae
+                        ipsum
+                        odio blanditiis perferendis, voluptatum ipsam similique mollitia quae dolorum qui sint eius
+                        fugiat
+                        tempore. Iure alias, minus possimus quibusdam sint dolorem illo quasi voluptate molestias velit
+                        porro culpa delectus quam, repellat provident Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Dolorem
+                        dolorum eligendi cumque ipsa?
+                        Repellat nesciunt cupiditate nam omnis magni molestiae? Cum eum, repellendus aut quam doloribus
+                        cumque animi adipisci eligendi aspernatur facilis optio enim at.</p>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="review-area">
+                      <img class="img-thumbnail" src="assets/img/blog/blog-comment-1.jpg" alt="comment">
+                      <div class="review-area-box">
+                        <h4>Grant Prior - <span>November 5, 2017</span></h4>
+                        <div class="product-rating">
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="far fa-star"></i></a>
+                        </div>
+                        <div class="review-text">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusantium at culpa
+                            sapiente omnis saepe nulla nam vitae reiciendis, quo voluptatibus sunt eaque alias quae!</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-area">
+                      <img class="img-thumbnail" src="assets/img/blog/blog-comment-2.jpg" alt="comment">
+                      <div class="review-area-box">
+                        <h4>Mark Hill - <span>June 25, 2018</span></h4>
+                        <div class="product-rating">
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                          <a href="#"><i class="fas fa-star"></i></a>
+                        </div>
+                        <div class="review-text">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusantium at culpa
+                            sapiente omnis saepe nulla nam vitae reiciendis, quo voluptatibus sunt eaque alias quae!</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="review-box">
+              <div class="review-box__body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="review-box__content">
+                      <h2>Add a review</h2>
+                      <p>Your email address will not be published. Required fields are marked.</p>
+                      <div class="review-box-titel">
+                        <h3>Your rating</h3>
+                        <div class="review-box-icon">
+                          <a href="#"><i class="far fa-star"></i></a>
+                          <a href="#"><i class="far fa-star"></i></a>
+                          <a href="#"><i class="far fa-star"></i></a>
+                          <a href="#"><i class="far fa-star"></i></a>
+                          <a href="#"><i class="far fa-star"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-7">
+                    <form class="review-form" action="#">
+                      <div class="row">
+                        <div class="col-xl-12">
+                          <label for="message">Your Review</label>
+                          <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Enter Your Comment*"
+                            required></textarea>
+                        </div>
+                        <div class="col-xl-6">
+                          <label for="user-name">Name</label>
+                          <input class="form-control" type="text" id="user-name">
+                        </div>
+                        <div class="col-xl-6">
+                          <label for="user-email">Email</label>
+                          <input class="form-control" type="email" id="user-email">
+                        </div>
+                        <div class="col-xl-12">
+                          <button type="submit" class="main__btn">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- |=====|| Product Details end ||=================| -->
+  <!-- |==========================================| -->
+
+*/ 

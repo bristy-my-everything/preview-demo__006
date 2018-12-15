@@ -1,0 +1,457 @@
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Preview hero area
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+/*==================================================
+===| 12. Preview hero area
+===================================================*/
+
+.preview-area {
+  position: relative;
+  overflow: hidden;
+
+  .particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // opacity: 1
+  }
+
+  &.preview-area-img {
+    background: url(../img/hero/full-bg-01.jpg);
+    @include overlay_parent;
+    @include bg_fixed;
+
+    &::before {
+      @include overlay;
+      background: #000;
+      opacity: .6;
+    }
+  }
+
+  .preview-area-content {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    @include laptop1 {
+      height: 850px;
+    }
+
+    @include tab1 {
+      height: 750px;
+    }
+
+    @include phone1 {
+      height: 550px;
+    }
+  }
+
+  .preview-banner {
+
+    h1 {
+      color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+
+      span {
+        color: #fbb431;
+        text-transform: uppercase;
+      }
+
+      @include desktop3 {
+        font-size: 40px;
+      }
+
+      @include laptop1 {
+        font-size: 30px;
+      }
+
+      @include tab1 {
+        font-size: 25px;
+      }
+
+      @include phone2 {
+        font-size: 18px;
+      }
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+
+      span {
+        color: #fbb431;
+      }
+
+      @include desktop3 {
+        font-size: 25px;
+      }
+
+      @include laptop1 {
+        font-size: 20px;
+      }
+
+      @include tab1 {
+        font-size: 18px;
+      }
+
+      @include phone2 {
+        font-size: 15px;
+      }
+    }
+
+    p {
+      color: #fff;
+      font-size: 17px;
+      opacity: .85;
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 30px;
+
+      @include desktop3 {
+        font-size: 15px;
+      }
+
+      @include laptop1 {
+        margin-top: 20px;
+      }
+
+      @include phone2 {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+
+    a {
+      color: #fbb431;
+      padding: 12px 30px;
+      border: 2px solid #fbb431;
+      background: inherit;
+      margin-top: 50px;
+      display: inline-block;
+      transition: .3s linear;
+      margin-right: 10px;
+      font-weight: bold;
+      border-radius: 5px;
+
+      @include desktop3 {
+        padding: 10px 25px;
+      }
+
+      @include laptop1 {
+        margin-top: 30px;
+      }
+
+      @include phone2 {
+        width: 45%;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      &>i {
+        @include phone2 {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background: #fbb431;
+        color: #fff;
+        border-color: #fbb431;
+      }
+
+    }
+  }
+}
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Demo area
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+
+.demo {
+  background-color: #343838;
+  background-image: url("../img/png-img/45-degree-fabric-dark.png");
+
+  &__titles {
+    margin-bottom: 80px;
+
+    @include laptop2 {
+      margin-bottom: 50px;
+    }
+
+    li {
+      display: inline-block;
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25);
+      margin: 0 5px 30px;
+      font-weight: bold;
+
+      @include laptop1 {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+
+      @include laptop2 {
+        margin-bottom: 20px;
+      }
+    }
+
+    li.active {
+      background: #fbb431;
+    }
+  }
+
+  &__list {
+    @include desktop1_4 {
+      padding-right: 4%;
+      padding-left: 4%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__hover {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: .5s;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #000;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s;
+      z-index: 2;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    @include middle;
+    z-index: 5;
+
+    a {
+      color: #fff;
+      padding: 10px 30px;
+      border: 2px solid #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s;
+
+      &:hover {
+        background: #fbb431;
+        border-color: #fbb431;
+      }
+    }
+  }
+
+  &__name {
+    background: #2c2d39;
+    padding: 10px;
+    transition: all .5s;
+
+    h3 {
+      text-align: center;
+      font-size: 25px;
+      color: #fff;
+      transition: all .5s;
+    }
+  }
+}
+
+.demo__item:hover .demo__hover::before {
+  opacity: .5;
+  visibility: visible;
+}
+
+.demo__item:hover .demo__hover img {
+  transform: scale(1.05);
+}
+
+.demo__item:hover .demo__btn a {
+  opacity: 1;
+  visibility: visible;
+}
+
+.demo__item:hover .demo__name {
+  background: #1D1E26;
+  border-color: #1D1E26;
+}
+
+.demo__item:hover .demo__name h3 {
+  color: #fff;
+}
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Feature area
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+
+.feature {
+  background-color: #2c2f2f;
+  background-image: url("../img/png-img/black-twill.png");
+
+  &__heading {
+
+    h2 {
+      color: #fff;
+      margin-bottom: 50px;
+      font-size: 40px;
+      font-weight: bold;
+
+      @include phone1 {
+        font-size: 30px;
+      }
+
+      @include phone3 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__item {
+    height: 160px;
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    transition: .5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__item-box {
+
+    img {
+      width: 70px;
+    }
+
+    h4 {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #222;
+
+      @include desktop3 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Footer
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+
+.footer {background-color: #222222;
+  background-image: url("../img/png-img/dark-wood.png");
+  border-top: 10px solid #222;
+
+  .content__box {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  h2 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: bold;
+
+    @include desktop3 {
+      font-size: 40px;
+    }
+
+    @include laptop1 {
+      font-size: 30px;
+    }
+
+    @include phone2 {
+      font-size: 25px;
+    }
+  }
+
+  h3 {
+    font-size: 35px;
+    color: #fbb431;
+    margin-bottom: 35px;
+    font-weight: bold;
+
+    @include desktop3 {
+      font-size: 25px;
+    }
+
+    @include laptop1 {
+      font-size: 20px;
+    }
+
+    @include phone2 {
+      font-size: 18px;
+    }
+  }
+
+  &__rate {
+    margin-bottom: 20px;
+
+    i {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 20px;
+
+      @include laptop1 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  a {
+    color: #fbb431;
+    padding: 12px 30px;
+    border: 2px solid #fbb431;
+    background: inherit;
+    display: inline-block;
+    transition: .3s linear;
+    font-weight: bold;
+    border-radius: 5px;
+
+    @include desktop3 {
+      padding: 10px 25px;
+    }
+
+    &:hover {
+      background: #fbb431;
+      color: #fff;
+      border: 2px solid #fbb431;
+    }
+  }
+}

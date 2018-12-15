@@ -1,0 +1,1133 @@
+/***************************************************
+================ Master Stylesheet =================
+====================================================
+Template Name : 
+Template URL :
+Description : This is Responsive html5 template.
+Author : 
+Author URL :
+Version : 1.0
+Tags : 
+****************************************************
+*
+*
+**/
+/***************************************************
+=================== CSS INDEX ======================
+====================================================
+01. Google Font
+02. Reset CSS
+03. Animations
+04. Preloader
+05. Scroll To Top
+06. Navbar
+07. Input
+08. Button
+09. Header
+10. Heading
+11. Footer
+****************************************************
+*
+*
+**/
+/*==================================================
+===| 01. Google Font
+===================================================*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,500,700");
+/*==================================================
+===| 02. Reset CSS
+===================================================*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; }
+
+html,
+body {
+  min-height: 100%; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #404040; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", serif; }
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+  @media only screen and (max-width: 575px) {
+    p {
+      font-size: 15px; } }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+ul li {
+  list-style: none; }
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  border: none; }
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0 solid; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+i {
+  font-style: normal; }
+
+figure {
+  margin: 0;
+  padding: 0; }
+
+.clear::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+section {
+  background-color: #fff; }
+
+.vh-100 {
+  height: 100vh; }
+
+.content__box {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media only screen and (max-width: 1199px) {
+    .content__box {
+      padding-top: 80px;
+      padding-bottom: 80px; } }
+  @media only screen and (max-width: 767px) {
+    .content__box {
+      padding-top: 60px;
+      padding-bottom: 60px; } }
+
+.footer__contentBox {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.fluid__contentBox {
+  margin-left: 4%;
+  margin-right: 4%; }
+  @media only screen and (max-width: 1399px) {
+    .fluid__contentBox {
+      margin-left: 0;
+      margin-right: 0; } }
+
+.gray-bg {
+  background-color: #F8F9FA; }
+
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff; }
+
+::selection {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff; }
+
+.is-sticky {
+  position: relative;
+  z-index: 100000; }
+
+/*==================================================
+===| 03. Animations
+===================================================*/
+@-webkit-keyframes fadeInLeft30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInLeft30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.fadeInLeft30 {
+  -webkit-animation-name: fadeInLeft30;
+  animation-name: fadeInLeft30; }
+
+@-webkit-keyframes fadeInRight30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInRight30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.fadeInRight30 {
+  -webkit-animation-name: fadeInRight30;
+  animation-name: fadeInRight30; }
+
+/*==================================================
+===| 04. Preloader
+===================================================*/
+.loader {
+  background: #000;
+  background: radial-gradient(#222, #000);
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999; }
+
+.loader-inner {
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px; }
+
+.loader-line-wrap {
+  animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  box-sizing: border-box;
+  height: 50px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 100%;
+  width: 100px; }
+
+.loader-line {
+  border: 4px solid transparent;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px; }
+
+.loader-line-wrap:nth-child(1) {
+  animation-delay: -50ms; }
+
+.loader-line-wrap:nth-child(2) {
+  animation-delay: -100ms; }
+
+.loader-line-wrap:nth-child(3) {
+  animation-delay: -150ms; }
+
+.loader-line-wrap:nth-child(4) {
+  animation-delay: -200ms; }
+
+.loader-line-wrap:nth-child(5) {
+  animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+  border-color: #eb4747;
+  height: 90px;
+  width: 90px;
+  top: 7px; }
+
+.loader-line-wrap:nth-child(2) .loader-line {
+  border-color: #ebeb47;
+  height: 76px;
+  width: 76px;
+  top: 14px; }
+
+.loader-line-wrap:nth-child(3) .loader-line {
+  border-color: #47eb47;
+  height: 62px;
+  width: 62px;
+  top: 21px; }
+
+.loader-line-wrap:nth-child(4) .loader-line {
+  border-color: #47ebeb;
+  height: 48px;
+  width: 48px;
+  top: 28px; }
+
+.loader-line-wrap:nth-child(5) .loader-line {
+  border-color: #4747eb;
+  height: 34px;
+  width: 34px;
+  top: 35px; }
+
+@keyframes spin {
+  0%,
+  15% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+/*==================================================
+===| 05. Scroll To Top
+===================================================*/
+.scrollToTop {
+  position: fixed;
+  display: none;
+  bottom: 15px;
+  right: 30px;
+  z-index: 100000;
+  color: #fff;
+  background-color: #000;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .3s; }
+  .scrollToTop:hover {
+    color: #fff;
+    background-color: #e49504; }
+  @media only screen and (max-width: 991px) {
+    .scrollToTop {
+      right: 20px; } }
+  @media only screen and (max-width: 767px) {
+    .scrollToTop {
+      bottom: 10px;
+      right: 10px; } }
+  @media only screen and (max-width: 575px) {
+    .scrollToTop {
+      height: 40px;
+      width: 40px;
+      line-height: 40px; } }
+  .scrollToTop i::before {
+    font-size: 20px;
+    padding: 0;
+    margin: 0; }
+
+/*==================================================
+===| 06. Navbar2
+===================================================*/
+.navbar-01__wrapper {
+  padding: 0 85px !important;
+  position: relative; }
+  @media only screen and (max-width: 1199px) {
+    .navbar-01__wrapper {
+      padding: 0 20px !important; } }
+  .navbar-01__wrapper a img {
+    position: absolute;
+    left: 50px;
+    top: 2px;
+    cursor: pointer;
+    z-index: 100;
+    width: 150px; }
+    @media only screen and (max-width: 991px) {
+      .navbar-01__wrapper a img {
+        width: 100px;
+        top: 1px; } }
+    @media only screen and (max-width: 767px) {
+      .navbar-01__wrapper a img {
+        left: 25px;
+        top: 4px; } }
+    @media only screen and (max-width: 479px) {
+      .navbar-01__wrapper a img {
+        left: 15px;
+        width: 80px;
+        top: 6px; } }
+.navbar-01 .navbar {
+  padding: 35px 0px 20px 0px;
+  transition: all .3s linear; }
+  @media only screen and (max-width: 991px) {
+    .navbar-01 .navbar {
+      padding: 20px 0px; } }
+.navbar-01 ul.navbar-nav > li > a {
+  font-family: "Roboto Slab", serif;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .3s; }
+.navbar-01 ul.navbar-nav > li > a:hover,
+.navbar-01 ul.navbar-nav > li > a:focus {
+  background: none !important;
+  color: #fbb431 !important; }
+.navbar-01 ul.navbar-nav > li.nav-item a.active {
+  color: #fbb431 !important; }
+.navbar-01 .navbar-brand {
+  padding: 13px 15px; }
+.navbar-01 .navbar-toggler {
+  display: none; }
+
+.is-sticky #navbar2 {
+  background: #333636;
+  padding: 20px 0;
+  box-shadow: 0 8px 6px -9px #000;
+  z-index: 100; }
+  @media only screen and (max-width: 767px) {
+    .is-sticky #navbar2 {
+      padding: 15px 0 20px 0; } }
+
+.mobile__open-btn {
+  font-size: 30px;
+  color: #fbb431;
+  cursor: pointer;
+  z-index: 100;
+  position: absolute;
+  right: 50px;
+  top: -10px;
+  display: none; }
+  @media only screen and (max-width: 991px) {
+    .mobile__open-btn {
+      top: 4px; } }
+  @media only screen and (max-width: 767px) {
+    .mobile__open-btn {
+      right: 25px; } }
+  @media only screen and (max-width: 479px) {
+    .mobile__open-btn {
+      right: 15px; } }
+  @media only screen and (max-width: 991px) {
+    .mobile__open-btn {
+      display: block !important; } }
+.mobile__close-btn {
+  font-size: 50px;
+  color: #212226;
+  font-weight: 400;
+  cursor: pointer;
+  position: absolute;
+  top: 22px;
+  right: 50px;
+  transition: all .3s; }
+  @media only screen and (max-width: 767px) {
+    .mobile__close-btn {
+      right: 25px; } }
+  @media only screen and (max-width: 479px) {
+    .mobile__close-btn {
+      right: 15px; } }
+  .mobile__close-btn:hover, .mobile__close-btn:focus {
+    color: #fbb431; }
+.mobile__nav {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 105;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s linear;
+  overflow-y: hidden; }
+  .mobile__nav ul.nav {
+    display: block; }
+  .mobile__nav ul.nav > li.nav-item a.active {
+    color: #fbb431 !important; }
+.mobile__nav-content {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 15%; }
+  .mobile__nav-content ul li {
+    margin-bottom: 20px; }
+    @media only screen and (max-width: 767px) {
+      .mobile__nav-content ul li {
+        margin-bottom: 15px; } }
+    @media only screen and (max-width: 640px) {
+      .mobile__nav-content ul li {
+        margin-bottom: 10px; } }
+    @media only screen and (max-width: 479px) {
+      .mobile__nav-content ul li {
+        margin-bottom: 5px; } }
+  .mobile__nav-content ul li a {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    color: #212226;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s;
+    display: inline-block; }
+    @media only screen and (max-width: 479px) {
+      .mobile__nav-content ul li a {
+        font-size: 16px; } }
+    .mobile__nav-content ul li a:hover, .mobile__nav-content ul li a:focus {
+      color: #fbb431; }
+
+/*
+  <!-- |==========================================| -->
+  <!-- |=====|| Navbar Start ||===============| -->
+  <header class="header" id="header">
+    <div class="navbar-01">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar2">
+        <div class="container-fluid navbar-01__wrapper">
+          <!-- Mobile Menu Oper Button -->
+          <span class="mobile__open-btn">&#9776;</span>
+          <!-- logo -->
+          <a class="navbar-brand smooth-scroll" href="#site-body">
+            <img src="assets/img/logo/logo-2.png" alt="Logo">
+          </a>
+          <!-- Main Menu -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+          </button>
+          <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link smooth-scroll active" href="#site-body">Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link smooth-scroll" href="#oily2">Demo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link smooth-scroll" href="#oily3">Feature</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Mobile Menu -->
+          <div class="mobile__nav">
+            <span class="mobile__close-btn">&times;</span>
+            <div class="mobile__nav-content">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link smooth-scroll active" href="#site-body">Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link smooth-scroll" href="#oily2">Demo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link smooth-scroll" href="#oily3">Feature</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- |=====|| Navbar End ||=================| -->
+  <!-- |==========================================| -->
+*/
+/*
+  //////////////////////////////////////////////////////
+  // Navbar2 for mobile
+  $('.mobile__open-btn').click(function () {
+    $('.mobile__nav').css("height", "100%");
+  });
+  $('.mobile__close-btn, .mobile__nav a').click(function () {
+    $('.mobile__nav').css("height", "0%");
+  });
+*/
+/*==================================================
+===| 07. Input
+===================================================*/
+.form-control {
+  border: 2px solid #eee;
+  margin-bottom: 20px;
+  padding: 20px 15px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 none;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif; }
+  .form-control:focus {
+    border-color: rgba(251, 180, 49, 0.5);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0 none;
+    color: #222; }
+
+.textarea_parent {
+  position: relative;
+  overflow: hidden; }
+
+.textarea_parent > textarea:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 none; }
+
+.textarea_parent > textarea {
+  min-height: 100px; }
+
+/*==================================================
+===| 08. Button
+===================================================*/
+.btn2 {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 2px 8px 0 rgba(0, 0, 0, 0.1); }
+  .btn2:hover {
+    color: #333; }
+
+.btn2:hover,
+.btn2:focus {
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.14), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent; }
+
+.btn2:focus,
+.btn2.focus {
+  outline: 0; }
+
+.main__btn {
+  background: #fbb431;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  padding: 14px 30px;
+  display: inline-block;
+  transition: all .4s;
+  text-transform: uppercase; }
+  @media only screen and (max-width: 575px) {
+    .main__btn {
+      font-size: 13px;
+      padding: 12px 18px; } }
+  .main__btn:hover {
+    color: #222;
+    background: #e49504; }
+
+button.main__btn {
+  border: none;
+  padding: 18px 30px;
+  cursor: pointer;
+  display: inline-block; }
+  @media only screen and (max-width: 575px) {
+    button.main__btn {
+      font-size: 13px;
+      padding: 16px 18px; } }
+
+.view__more {
+  font-size: 14px;
+  font-weight: 700;
+  color: #777;
+  transition: all .2s;
+  text-transform: uppercase; }
+  .view__more i {
+    transition: .2s;
+    color: #777; }
+  .view__more:hover {
+    color: #e49504; }
+  .view__more:hover i {
+    padding-left: 10px;
+    color: #e49504; }
+
+/*==================================================
+===| 09. Header
+===================================================*/
+/*==================================================
+===| 10. Heading
+===================================================*/
+/*==================================================
+===| 11. Footer
+===================================================*/
+/*==================================================
+===| 12. Preview hero area
+===================================================*/
+.preview-area {
+  position: relative;
+  overflow: hidden; }
+  .preview-area .particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .preview-area.preview-area-img {
+    background: url(../img/hero/full-bg-01.jpg);
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+    .preview-area.preview-area-img::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #000;
+      opacity: .6; }
+  .preview-area .preview-area-content {
+    height: 100vh;
+    position: relative;
+    z-index: 1; }
+    @media only screen and (max-width: 991px) {
+      .preview-area .preview-area-content {
+        height: 850px; } }
+    @media only screen and (max-width: 767px) {
+      .preview-area .preview-area-content {
+        height: 750px; } }
+    @media only screen and (max-width: 575px) {
+      .preview-area .preview-area-content {
+        height: 550px; } }
+  .preview-area .preview-banner h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold; }
+    .preview-area .preview-banner h1 span {
+      color: #fbb431;
+      text-transform: uppercase; }
+    @media only screen and (max-width: 1199px) {
+      .preview-area .preview-banner h1 {
+        font-size: 40px; } }
+    @media only screen and (max-width: 991px) {
+      .preview-area .preview-banner h1 {
+        font-size: 30px; } }
+    @media only screen and (max-width: 767px) {
+      .preview-area .preview-banner h1 {
+        font-size: 25px; } }
+    @media only screen and (max-width: 479px) {
+      .preview-area .preview-banner h1 {
+        font-size: 18px; } }
+  .preview-area .preview-banner h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold; }
+    .preview-area .preview-banner h3 span {
+      color: #fbb431; }
+    @media only screen and (max-width: 1199px) {
+      .preview-area .preview-banner h3 {
+        font-size: 25px; } }
+    @media only screen and (max-width: 991px) {
+      .preview-area .preview-banner h3 {
+        font-size: 20px; } }
+    @media only screen and (max-width: 767px) {
+      .preview-area .preview-banner h3 {
+        font-size: 18px; } }
+    @media only screen and (max-width: 479px) {
+      .preview-area .preview-banner h3 {
+        font-size: 15px; } }
+  .preview-area .preview-banner p {
+    color: #fff;
+    font-size: 17px;
+    opacity: .85;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px; }
+    @media only screen and (max-width: 1199px) {
+      .preview-area .preview-banner p {
+        font-size: 15px; } }
+    @media only screen and (max-width: 991px) {
+      .preview-area .preview-banner p {
+        margin-top: 20px; } }
+    @media only screen and (max-width: 479px) {
+      .preview-area .preview-banner p {
+        width: 100%;
+        font-size: 14px; } }
+  .preview-area .preview-banner a {
+    color: #fbb431;
+    padding: 12px 30px;
+    border: 2px solid #fbb431;
+    background: inherit;
+    margin-top: 50px;
+    display: inline-block;
+    transition: .3s linear;
+    margin-right: 10px;
+    font-weight: bold;
+    border-radius: 5px; }
+    @media only screen and (max-width: 1199px) {
+      .preview-area .preview-banner a {
+        padding: 10px 25px; } }
+    @media only screen and (max-width: 991px) {
+      .preview-area .preview-banner a {
+        margin-top: 30px; } }
+    @media only screen and (max-width: 479px) {
+      .preview-area .preview-banner a {
+        width: 45%;
+        font-size: 14px;
+        padding: 10px; } }
+    @media only screen and (max-width: 479px) {
+      .preview-area .preview-banner a > i {
+        display: none; } }
+    .preview-area .preview-banner a:hover {
+      background: #fbb431;
+      color: #fff;
+      border-color: #fbb431; }
+
+.demo {
+  background-color: #343838;
+  background-image: url("../img/png-img/45-degree-fabric-dark.png"); }
+  .demo__titles {
+    margin-bottom: 80px; }
+    @media only screen and (max-width: 880px) {
+      .demo__titles {
+        margin-bottom: 50px; } }
+    .demo__titles li {
+      display: inline-block;
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25);
+      margin: 0 5px 30px;
+      font-weight: bold; }
+      @media only screen and (max-width: 991px) {
+        .demo__titles li {
+          padding: 8px 15px;
+          font-size: 14px; } }
+      @media only screen and (max-width: 880px) {
+        .demo__titles li {
+          margin-bottom: 20px; } }
+    .demo__titles li.active {
+      background: #fbb431; }
+  @media only screen and (min-width: 992px) {
+    .demo__list {
+      padding-right: 4%;
+      padding-left: 4%; } }
+  .demo__item {
+    margin-bottom: 30px; }
+  .demo__hover {
+    position: relative;
+    overflow: hidden; }
+    .demo__hover img {
+      width: 100%;
+      height: auto;
+      transition: .5s; }
+    .demo__hover::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #000;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s;
+      z-index: 2; }
+  .demo__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5; }
+    .demo__btn a {
+      color: #fff;
+      padding: 10px 30px;
+      border: 2px solid #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s; }
+      .demo__btn a:hover {
+        background: #fbb431;
+        border-color: #fbb431; }
+  .demo__name {
+    background: #2c2d39;
+    padding: 10px;
+    transition: all .5s; }
+    .demo__name h3 {
+      text-align: center;
+      font-size: 25px;
+      color: #fff;
+      transition: all .5s; }
+
+.demo__item:hover .demo__hover::before {
+  opacity: .5;
+  visibility: visible; }
+
+.demo__item:hover .demo__hover img {
+  transform: scale(1.05); }
+
+.demo__item:hover .demo__btn a {
+  opacity: 1;
+  visibility: visible; }
+
+.demo__item:hover .demo__name {
+  background: #1D1E26;
+  border-color: #1D1E26; }
+
+.demo__item:hover .demo__name h3 {
+  color: #fff; }
+
+.feature {
+  background-color: #2c2f2f;
+  background-image: url("../img/png-img/black-twill.png"); }
+  .feature__heading h2 {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: bold; }
+    @media only screen and (max-width: 575px) {
+      .feature__heading h2 {
+        font-size: 30px; } }
+    @media only screen and (max-width: 319px) {
+      .feature__heading h2 {
+        font-size: 20px; } }
+  .feature__item {
+    height: 160px;
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    transition: .5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+    .feature__item:hover {
+      transform: scale(1.1); }
+  .feature__item-box img {
+    width: 70px; }
+  .feature__item-box h4 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #222; }
+    @media only screen and (max-width: 1199px) {
+      .feature__item-box h4 {
+        font-size: 18px; } }
+
+.footer {
+  background-color: #222222;
+  background-image: url("../img/png-img/dark-wood.png");
+  border-top: 10px solid #222; }
+  .footer .content__box {
+    padding-top: 150px;
+    padding-bottom: 150px; }
+  .footer h2 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: bold; }
+    @media only screen and (max-width: 1199px) {
+      .footer h2 {
+        font-size: 40px; } }
+    @media only screen and (max-width: 991px) {
+      .footer h2 {
+        font-size: 30px; } }
+    @media only screen and (max-width: 479px) {
+      .footer h2 {
+        font-size: 25px; } }
+  .footer h3 {
+    font-size: 35px;
+    color: #fbb431;
+    margin-bottom: 35px;
+    font-weight: bold; }
+    @media only screen and (max-width: 1199px) {
+      .footer h3 {
+        font-size: 25px; } }
+    @media only screen and (max-width: 991px) {
+      .footer h3 {
+        font-size: 20px; } }
+    @media only screen and (max-width: 479px) {
+      .footer h3 {
+        font-size: 18px; } }
+  .footer__rate {
+    margin-bottom: 20px; }
+    .footer__rate i {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 20px; }
+      @media only screen and (max-width: 991px) {
+        .footer__rate i {
+          font-size: 16px; } }
+  .footer a {
+    color: #fbb431;
+    padding: 12px 30px;
+    border: 2px solid #fbb431;
+    background: inherit;
+    display: inline-block;
+    transition: .3s linear;
+    font-weight: bold;
+    border-radius: 5px; }
+    @media only screen and (max-width: 1199px) {
+      .footer a {
+        padding: 10px 25px; } }
+    .footer a:hover {
+      background: #fbb431;
+      color: #fff;
+      border: 2px solid #fbb431; }
+
+/*==================================================
+===| Author CSS End
+===================================================*/
+/*==================================================
+===| Helper classes
+===================================================*/
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important; }
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */ }
+
+/*
+* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit; }
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+.invisible {
+  visibility: hidden; }
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/* ==========================================================================
+EXAMPLE Media Queries for Responsive Design.
+These examples override the primary ('mobile first') styles.
+Modify as content requires.
+========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+/* ==========================================================================
+Print styles.
+Inlined to avoid the additional HTTP request:
+https://www.phpied.com/delay-loading-your-print-css/
+========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+ /*
+* Don't show links that are fragment identifiers,
+* or use the `javascript:` pseudo protocol
+*/
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre {
+    white-space: pre-wrap !important; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+ /*
+* Printing Tables:
+* http://css-discuss.incutio.com/wiki/Printing_Tables
+*/
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+/*==================================================
+===| Style CSS End
+===================================================*/
+
+/*# sourceMappingURL=style.css.map */

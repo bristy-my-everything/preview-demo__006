@@ -1,0 +1,103 @@
+/*==================================================
+===| 08. Button
+===================================================*/
+.btn2 {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.btn2:hover,
+.btn2:focus {
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.14), 0 4px 14px 0 rgba(0, 0, 0, 0.10);
+  border: 1px solid transparent;
+}
+
+.btn2:focus,
+.btn2.focus {
+  outline: 0;
+}
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Site Button
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+.main__btn {
+  background: $color-primary;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  padding: 14px 30px;
+  display: inline-block;
+  transition: all .4s;
+  text-transform: uppercase;
+
+  @include phone1 {
+    font-size: 13px;
+    padding: 12px 18px;
+  }
+
+  &:hover {
+    color: #222;
+    background: $color-secondary;
+  }
+}
+
+
+button.main__btn {
+  border: none;
+  padding: 18px 30px;
+  cursor: pointer;
+  display: inline-block;
+
+  @include phone1 {
+    font-size: 13px;
+    padding: 16px 18px;
+  }
+}
+
+
+.view__more {
+  font-size: 14px;
+  font-weight: 700;
+  color: #777;
+  transition: all .2s;
+  text-transform: uppercase;
+
+  i {
+    transition: .2s;
+    color: #777;
+  }
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &:hover i {
+    padding-left: 10px;
+    color: $color-secondary;
+  }
+}
+// <a class="view__more" href="#">View More <i class="fas fa-long-arrow-alt-right"></i></a>
